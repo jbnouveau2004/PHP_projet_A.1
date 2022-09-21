@@ -17,7 +17,7 @@
 
 
 
-<INPUT type="submit" value="Envoyer" id="envoyer" name="envoyer">
+<INPUT type="submit" value="Envoyer" id="envoyer" name="envoyer" class="btn btn-primary">
 </form>
 
 <div class="mt-5 ms-5">

@@ -15,7 +15,7 @@
         <OPTION value="9">9</OPTION>
         <OPTION value="10">10</OPTION>
     </SELECT>
-    <INPUT type="submit" value="Envoyer" class="ms-1" name="envoyer">
+    <INPUT type="submit" value="Envoyer" name="envoyer" class="ms-1 btn btn-primary">
 </form>
 
 <div class="mt-5 ms-5">
@@ -33,7 +33,7 @@ if(isset($_GET['table'])){
     echo '<input type="hidden" name="resultat" value="' . $resultat . '">'; //variable suivi au prochain envoi
     echo '<input type="hidden" name="table" value="' . $_GET['table'] . '">'; //valeur suivi au prochain envoi
     echo '<input type="text" name="test" placeholder="Entrer le résultat"></input>';
-    echo '<INPUT type="submit" value="verifier" class="ms-1" name="verifier">';
+    echo '<INPUT type="submit" value="verifier" name="verifier" class="ms-1 btn btn-primary">';
     echo '</form>';
 
 }
@@ -41,10 +41,10 @@ if(isset($_GET['table'])){
 // teste la valeur entré précédement au bon résultat, seulement en cas de vérification
 if(isset($_GET['test']) && isset($_GET['verifier'])){
     if(($_GET['resultat']) == ($_GET['test'])){
-        echo "Bonne réponse !";
+        echo "<div class='alert alert-success'>Bonne réponse !</div>";
     }else{
-        echo "Mauvaise réponse !<br>";
-        echo "La réponse était: " . $_GET['resultat']; 
+        echo "<div class='alert alert-danger'>Mauvaise réponse !<br>";
+        echo "La réponse était: " . $_GET['resultat'] . "</div>"; 
     }
 
 }

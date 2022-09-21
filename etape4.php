@@ -18,7 +18,7 @@
 
 
 
-<INPUT type="submit" value="Envoyer" id="envoyer" name="envoyer">
+<INPUT type="submit" value="Envoyer" id="envoyer" name="envoyer" class="btn btn-primary">
 </form>
 
 <div class="mt-5 ms-5">
@@ -47,14 +47,14 @@ while(!isset($_GET[$hasard1])){ // choix au hasard de 0 à 10 tant qu'il n'a pas
         if(isset($_GET[$k])){echo '<input type="hidden" name="' . $k . '" value="' . $k . '">';}
     }
     echo '<input type="text" name="test" placeholder="Entrer le résultat"></input>';
-    echo '<INPUT type="submit" value="verifier" class="ms-1" name="verifier">';
+    echo '<INPUT type="submit" value="verifier" name="verifier" class="ms-1 btn btn-primary">';
     echo '</form>';
 
 }
 // test si un calcul a été rentré
 if(isset($_GET['test']) && isset($_GET['verifier'])){
     if(($_GET['resultat']) == ($_GET['test'])){
-        echo "<b>Bonne réponse !</b>";
+        echo "<div class='alert alert-success'>Bonne réponse !</div>";
         $fichier = fopen('points.txt', 'c+b'); // mode lecture et écriture
         $points = fread($fichier,filesize('points.txt')); // lecture de x octet, où x est la taille du fichier en octet
         $points=(int)$points+1;
@@ -62,8 +62,8 @@ if(isset($_GET['test']) && isset($_GET['verifier'])){
         fwrite($fichier, $points);
 
     }else{
-        echo "<b>Mauvaise réponse !</b><br>";
-        echo "La réponse était: " . $_GET['resultat'];
+        echo "<div class='alert alert-danger'>Mauvaise réponse !<br>";
+        echo "La réponse était: " . $_GET['resultat'] . "</div>";
         $fichier = fopen('points.txt', 'c+b'); // mode lecture et écriture
         $points = fread($fichier,filesize('points.txt')); // lecture de x octet, où x est la taille du fichier en octet
         $points=(int)$points-1;

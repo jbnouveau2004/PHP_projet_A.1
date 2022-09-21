@@ -15,7 +15,7 @@
         <OPTION value="9">9</OPTION>
         <OPTION value="10">10</OPTION>
     </SELECT>
-    <INPUT type="submit" value="Envoyer" id="envoyer" name="envoyer">
+    <INPUT type="submit" value="Envoyer" id="envoyer" name="envoyer" class="btn btn-primary">
 </form>
 
 <div class="mt-5 ms-5">
