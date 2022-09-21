@@ -71,7 +71,17 @@
 
     
     <!-- Custom styles for this template -->
-    <link href="navbar-top-fixed.css" rel="stylesheet">
+    <!-- <link href="navbar-top-fixed.css" rel="stylesheet"> -->
+    <style>
+      /* Show it is fixed to the top */
+body {
+  min-height: 75rem;
+  padding-top: 4.5rem;
+}
+    </style>
+
+
+
   </head>
   <body>
     
