@@ -59,7 +59,7 @@ if(isset($_GET['test']) && isset($_GET['verifier'])){
         $points = fread($fichier,filesize('points.txt')); // lecture de x octet, où x est la taille du fichier en octet
         $points=(int)$points+1;
         fseek($fichier, 0); // retourne le curseur à 0
-        fwrite($fichier, $points);
+        fwrite($fichier, $points . "   "); // les espaces dans le cas on passe des dizaines aux unités
 
     }else{
         echo "<div class='alert alert-danger'>Mauvaise réponse !<br>";
@@ -68,7 +68,7 @@ if(isset($_GET['test']) && isset($_GET['verifier'])){
         $points = fread($fichier,filesize('points.txt')); // lecture de x octet, où x est la taille du fichier en octet
         $points=(int)$points-1;
         fseek($fichier, 0); // retourne le curseur à 0
-        fwrite($fichier, $points);
+        fwrite($fichier, $points . "   "); // les espaces dans le cas on passe des dizaines aux unités
 
     }
 
